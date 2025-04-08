@@ -1,40 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vought International</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="hero-banner">
-    <h1>Vought International</h1>
-    <p>Your trusted name in superheroes</p>
+  <header class="navbar">
+    <div class="logo">Vought</div>
+    <nav>
+      <a href="#heroes">Heroes</a>
+      <a href="#about">About</a>
+    </nav>
   </header>
 
-  <section class="heroes-section">
-    <h2>Our Top Heroes</h2>
-    <div class="hero-cards">
-      <div class="hero-card fade-in">
-        <img src="https://i.imgur.com/homelander.jpg" alt="Homelander">
+  <section class="hero-section">
+    <h1 class="main-title">Vought International</h1>
+    <p class="subtitle">We protect. You obey.</p>
+  </section>
+
+  <section id="heroes" class="cards-section">
+    <h2>Our Elite Supes</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="https://i.imgur.com/8w8V7mC.jpg" alt="Homelander">
         <h3>Homelander</h3>
-        <p>The leader of The Seven. Justice is his mission.</p>
+        <p>The symbol of American strength.</p>
       </div>
-      <div class="hero-card fade-in delay">
-        <img src="https://i.imgur.com/starlight.jpg" alt="Starlight">
+      <div class="card">
+        <img src="https://i.imgur.com/ZrH1AOa.jpg" alt="Starlight">
         <h3>Starlight</h3>
-        <p>Light in the darkness, with power and purpose.</p>
+        <p>The light in the darkness.</p>
       </div>
-      <div class="hero-card fade-in delay2">
-        <img src="https://i.imgur.com/atrain.jpg" alt="A-Train">
+      <div class="card">
+        <img src="https://i.imgur.com/3KYlqz1.jpg" alt="A-Train">
         <h3>A-Train</h3>
-        <p>The fastest man alive. Speed is his power.</p>
+        <p>Faster than a bullet.</p>
       </div>
     </div>
   </section>
 
+  <section id="about" class="about-section">
+    <h2>About Vought</h2>
+    <p>
+      Vought International is the world leader in superhero management, defense contracts,
+      and national security. We shape the future — one Supe at a time.
+    </p>
+  </section>
+
   <footer>
-    <p>&copy; 2025 Vought International. All rights reserved.</p>
+    <p>&copy; 2025 Vought International</p>
   </footer>
 
   <script src="script.js"></script>
