@@ -1,6 +1,85 @@
 body {
-  font-family: Arial, sans-serif;
-  background: #f9f9f9;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0e0e1a;
+  color: white;
+}
+
+.hero-banner {
   text-align: center;
-  padding: 2rem;
+  padding: 80px 20px;
+  background: linear-gradient(180deg, #050511, #0e0e1a);
+}
+
+.hero-banner h1 {
+  font-size: 3rem;
+  color: #00bfff;
+  text-shadow: 0 0 15px #00bfff;
+}
+
+.hero-banner p {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+.heroes-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.heroes-section h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #00bfff;
+}
+
+.hero-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.hero-card {
+  background: #1a1a2e;
+  padding: 20px;
+  border-radius: 12px;
+  width: 280px;
+  box-shadow: 0 0 20px #00bfff33;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.hero-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00bfff;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #050511;
+  color: #666;
+}
+
+/* Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s forwards;
+}
+
+.delay { animation-delay: 0.3s; }
+.delay2 { animation-delay: 0.6s; }
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
