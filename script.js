@@ -1,17 +1,16 @@
-// Reveal animation on scroll
+// Scroll reveal effect
 const reveals = document.querySelectorAll(".reveal");
 
-function revealOnScroll() {
-  for (let i = 0; i < reveals.length; i++) {
-    const windowHeight = window.innerHeight;
-    const elementTop = reveals[i].getBoundingClientRect().top;
-    const revealPoint = 100;
+const revealOnScroll = () => {
+  const triggerBottom = window.innerHeight * 0.85;
 
-    if (elementTop < windowHeight - revealPoint) {
-      reveals[i].classList.add("active");
+  reveals.forEach(reveal => {
+    const boxTop = reveal.getBoundingClientRect().top;
+    if (boxTop < triggerBottom) {
+      reveal.classList.add("visible");
     }
-  }
-}
+  });
+};
 
 window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("load", revealOnScroll);
