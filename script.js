@@ -48,4 +48,3 @@ document.querySelectorAll(".nav-links a").forEach(link =>
     observer.observe(card);
   });
 </script>
-
