@@ -202,44 +202,55 @@ footer {
   .main-title {
     font-size: 2.2rem;
   }
-  .logo-container {
-  width: 150px;
-  height: 150px;
+.logo-section {
+  position: relative;
+  height: 300px;
   perspective: 1000px;
-  margin: 50px;
+  overflow: hidden;
 }
 
 .logo-inner {
-  width: 100%;
-  height: 100%;
-  position: relative;
+  width: 150px;
+  height: 150px;
   transition: transform 0.6s ease;
   transform-style: preserve-3d;
-  cursor: pointer;
+  margin: auto;
 }
 
 .logo-icon, .logo-text {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 150px;
+  height: 150px;
   backface-visibility: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: Arial, sans-serif;
-  font-size: 1.1rem;
-  font-weight: bold;
-}
-
-.logo-icon {
-  background: #000;
-  color: white;
 }
 
 .logo-text {
-  background: #001f3f;
-  color: white;
   transform: rotateY(180deg);
+  background-color: #001f3f;
+  color: white;
+  font-weight: bold;
 }
-  
+
+.notsad-drop {
+  position: absolute;
+  top: -300px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  opacity: 0;
+  transition: top 1s ease, opacity 1s ease;
+}
+
+.notsad-drop img {
+  width: 100px;
+  border-radius: 50%;
+}
+
+.notsad-drop p {
+  color: #fff;
+  margin-top: 10px;
+  font-style: italic;
 }
