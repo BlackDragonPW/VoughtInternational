@@ -229,7 +229,7 @@ footer {
 
 .logo-text {
   transform: rotateY(180deg);
-  background-color: #001f3f;
+  background-color: #000;
   color: white;
   font-weight: bold;
 }
