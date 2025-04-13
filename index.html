@@ -4,8 +4,141 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vought International</title>
-  <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background-color: #000;
+      color: white;
+      scroll-behavior: smooth;
+    }
+
+    header.navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: #111;
+    }
+
+    .logo {
+      font-size: 24px;
+      color: #00bfff;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      margin: 4px;
+      border-radius: 2px;
+    }
+
+    nav.nav-links ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav.nav-links a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+    }
+
+    .hero-section {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .main-title {
+      font-size: 3em;
+      margin-bottom: 20px;
+      color: #00bfff;
+    }
+
+    .flip-card {
+      width: 300px;
+      height: 400px;
+      margin: 0 auto 40px;
+      perspective: 1000px;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.8s ease;
+    }
+
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .flip-card-front img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .flip-card-back {
+      background-color: #111;
+      color: #00bfff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      padding: 20px;
+      transform: rotateY(180deg);
+      text-align: center;
+    }
+
+    .scroll-flip.in-view .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: #aaa;
+    }
+
+    /* Mobile Nav */
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+      }
+      nav.nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: #111;
+        padding: 10px;
+        border-radius: 8px;
+      }
+      nav.nav-links.open {
+        display: flex;
+      }
+      nav.nav-links ul {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="navbar">
@@ -26,127 +159,52 @@
 
   <section class="hero-section">
     <h1 class="main-title">Vought International</h1>
-    <div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-      <img src="https://i.postimg.cc/d16k6JzK/image0.png" alt="Vought" />
+
+    <!-- Flip Card -->
+    <div class="flip-card scroll-flip">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="https://i.postimg.cc/d16k6JzK/image0.png" alt="Vought Logo" />
+        </div>
+        <div class="flip-card-back">
+          <h2>Vought International</h2>
+        </div>
+      </div>
     </div>
-    <div class="flip-card-back">
-      <h2>Vought International</h2>
-    </div>
-  </div>
-    </div>
+
     <p class="subtitle">We protect. You obey.</p>
   </section>
 
-  <section id="about" class="recruit-banner reveal">
+  <!-- Example About Section -->
+  <section id="about" style="padding: 40px 20px; text-align: center;">
     <h2>About Vought</h2>
     <p>
-      Made by the Ex-Leaders And Members from the once top #15 Alliances, Vought is a rising force — built by veterans, leaders, and strategists. We're forging a powerful, elite, and growth-driven community thriving on strength and loyalty.
-    </p>
-  </section><br>
-  
-<img src="https://i.ibb.co/C5jFvW5n/fedeca31b2efce7226f6253e86a5c73cc52a2c75x20.png" width="100%" height="Auto" alt="Government"><br>
-  
-  <section id="heroes" class="cards-section reveal">
-    <h2>Our Leadership<br><br>Our Heads of the Alliance</h2>
-    <div class="card-container">
-      <div class="card reveal">
-        <img src="https://i.ibb.co/zHhdnjRD/adb8a4518f140928e346eef2567c7764.png" alt="NotSad">
-        <h3>NotSad</h3>
-        <p>CEO Of Vought International<br><br>Ex-FA Of Empire Of the Romans (EotR)</p>
-      </div>
-      <div class="card reveal">
-        <img src="https://i.ibb.co/7Jr9RGxw/162e5feff3502d6fc2b588d04f87150a.png" alt="Alexio">
-        <h3>Alexio</h3>
-        <p>COO Of Vought International<br><br>Ex-Leader of Ampersand (&)</p>
-      </div>
-      <div class="card reveal">
-        <img src="https://i.ibb.co/bjBrz8Lf/6cc0cf6d4808694a58250f27f3e0f1eb.png" alt="Sneb">
-        <h3>Sneb</h3>
-        <p>COO Of Vought International<br><br>Ex-IA of Cypher</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="The Seven" class="cards-section reveal">
-    <h2>The Seven<br><br>These are the elite of the elite superheroes. These are the best of the best that the company can offer.</h2>
-    <div class="card-container">
-      <div class="card reveal">
-        <img src="https://i.ibb.co/7NvLjzbW/316a4c611ec23ee6ea873c6286cf23c0.png" alt="Mongo Manning">
-        <h3>Mongo Manning</h3>
-        <p>Head Of Security And Technology<br><br>Ex-Leader Wei (WEI)</p>
-      </div>
-      <div class="card reveal">
-        <img src="https://i.ibb.co/MD3XfSbd/c6141a3af7cae19959e5f1364c464b77.png" alt="DemonSpawn">
-        <h3>DemonSpawn</h3>
-        <p>Head Of Public Relations<br><br>Ex-Leader of Ampersand (&)</p>
-      </div>
-      <div class="card reveal">
-        <img src="https://i.ibb.co/K4JVxtf/f05b3ab444fd85b0fef14296c805a2b4.png" alt="Ianoo">
-        <h3>Ianoo</h3>
-        <p>Head Of Human Resource</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="Below Seven" class="cards-section reveal">
-    <h2>Below Seven<br><br>This is our second bestselling product of the company. One step below the seven but still strong.</h2>
-    <div class="card-container">
-      <div class="card reveal">
-        <img src="https://i.ibb.co/35xjf58f/f81087a6b978cc70323cc6f8b9436dd2.png" alt="Lachlan">
-        <h3>Lachlan</h3>
-        <p>Deputy Of Foreign Affairs</p>
-      </div>
-      <div class="card reveal">
-        <img src="https://i.ibb.co/3yp7rxkq/c3a2de6ae7885428e6ba5779371c0285.png" alt="Zan">
-        <h3>Zan</h3>
-        <p>Deputy Of Foreign Affairs</p>
-      </div>
-      <div class="card reveal">
-        <img src="https://i.ibb.co/5hdXXnVH/9c465c2bd8e767d7e43fb650b3f4c301.png" alt="Aqualeafy">
-        <h3>Aqualeafy</h3>
-        <p>Deputy Of Internal Affairs</p>
-      </div>
-      <div class="card reveal">
-        <img src="https://i.ibb.co/XZLjk0Fg/8b2e73bff9a1647a3767f47123895e7e.png" alt="Aqualeafy">
-        <h3>MrPotatoe</h3>
-        <p>Deputy Of Military Affairs</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="why-join reveal">
-    <h2>Why Join Vought?</h2>
-    <div class="features-grid">
-      <div class="feature">⚠️ Optional Taxes<br> Keep your profits.</div>
-      <div class="feature">🥷 Veteran Members<br> Led by ex-alliance heads.</div>
-      <div class="feature">⚔️ Active Protection<br> Always got your back.</div>
-      <div class="feature">⛔️ Elite Nations Wanted<br> Join the best.</div>
-      <div class="feature">👶 Noob Friendly<br> Learn from the pros.</div>
-      <div class="feature">🏴‍☠️ Flexible Raiding<br> No strict rules.</div>
-      <div class="feature">🏳️ Peaceful Growth<br> Focused on growth (for now).</div>
-      <div class="feature">💸 Growth Grants<br> Fast support for your nation.</div>
-    </div>
-  </section>
-
-  <section id="join" class="join-section reveal">
-    <h2>Join the Journey</h2>
-    <p>
-      We're not just an alliance — we're a movement.<br>
-      Join Vought and be part of something elite.
-    </p>
-    <iframe src="https://discordapp.com/widget?id=1103728755823874139&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-
-    <p style="margin-top: 20px;">
-      Or visit our <a href="https://politicsandwar.com/alliance/id=13410" target="_blank">P&W Page</a>
+      A powerhouse alliance built from the ashes of legends. Join a legacy of leadership, strategy, and victory.
     </p>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Vought International</p>
-  </footer>
+  <script>
+    // Hamburger menu toggle
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('nav-links').classList.toggle('open');
+    });
 
-  <script src="script.js"></script>
+    // Flip animation on scroll
+    document.addEventListener("DOMContentLoaded", function () {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+          } else {
+            entry.target.classList.remove('in-view');
+          }
+        });
+      }, {
+        threshold: 0.5
+      });
+
+      document.querySelectorAll('.scroll-flip').forEach(el => observer.observe(el));
+    });
+  </script>
 </body>
 </html>
