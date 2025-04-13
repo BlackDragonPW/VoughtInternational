@@ -30,3 +30,13 @@ document.querySelectorAll(".nav-links a").forEach(link =>
     navLinks.classList.remove("show");
   })
 );
+window.addEventListener('scroll', () => {
+  const logoInner = document.querySelector('.logo-inner');
+  const scrollPosition = window.scrollY; // The distance the user has scrolled
+  
+  // Calculate the rotation angle based on the scroll position
+  const rotationDegree = scrollPosition / 2;  // Adjust this divisor to control the flip speed
+
+  // Apply the rotation to the logo
+  logoInner.style.transform = `rotateY(${rotationDegree}deg)`;
+});
