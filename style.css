@@ -14,34 +14,39 @@ a {
   text-decoration: none;
 }
 
+/* Header & Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
-  background: rgba(0, 0, 0, 0.8);
+  padding: 20px 30px;
+  background: #000;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 999;
 }
 .logo {
   font-size: 1.8rem;
   color: #00bfff;
   text-shadow: 0 0 10px #00bfff;
 }
-.nav-links {
+.nav-links ul {
   display: flex;
+  list-style: none;
   gap: 20px;
 }
 .nav-links a {
   font-size: 1rem;
-  transition: color 0.3s;
+  color: #00bfff;
+  padding: 8px 12px;
+  transition: background 0.3s;
 }
 .nav-links a:hover {
-  color: #00bfff;
-  text-shadow: 0 0 10px #00bfff;
+  background: #111;
+  border-radius: 4px;
 }
 
+/* Hamburger */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -56,7 +61,7 @@ a {
   transition: all 0.3s ease;
 }
 
-/* Hero */
+/* Hero Section */
 .hero-section {
   height: 90vh;
   display: flex;
@@ -77,19 +82,18 @@ a {
   animation: fadeIn 3s ease-in-out;
 }
 
-/* Sections */
+/* Section Styling */
 .recruit-banner, .why-join, .join-section {
   padding: 60px 20px;
   text-align: center;
   background: #0a0a0a;
 }
-.recruit-banner h2, .why-join h2, .join-section h2 {
-  color: #00bfff;
-  margin-bottom: 15px;
-}
 .cards-section {
   padding: 60px 20px;
   text-align: center;
+}
+.cards-section h2 {
+  margin-bottom: 30px;
 }
 .card-container {
   display: flex;
@@ -150,7 +154,7 @@ footer {
   color: #666;
 }
 
-/* Animation & Scroll Reveal */
+/* Animations */
 .reveal {
   opacity: 0;
   transform: translateY(50px);
@@ -169,25 +173,27 @@ footer {
   100% { opacity: 1; transform: scale(1); }
 }
 
-/* Responsive */
+/* Responsive Menu */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
   }
   .nav-links {
     display: none;
-    flex-direction: column;
     position: absolute;
     top: 70px;
-    right: 20px;
+    right: 30px;
     background: #111;
+    padding: 20px;
     border-radius: 10px;
-    padding: 10px 20px;
-    box-shadow: 0 0 10px #00bfff55;
-    z-index: 99;
+    box-shadow: 0 0 10px #00bfff66;
   }
   .nav-links.show {
-    display: flex;
+    display: block;
+  }
+  .nav-links ul {
+    flex-direction: column;
+    gap: 10px;
   }
   .card-container {
     flex-direction: column;
