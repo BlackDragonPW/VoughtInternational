@@ -30,3 +30,22 @@ document.querySelectorAll(".nav-links a").forEach(link =>
     navLinks.classList.remove("show");
   })
 );
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const card = entry.target;
+      if (entry.isIntersecting) {
+        card.classList.add('in-view');
+      } else {
+        card.classList.remove('in-view');
+      }
+    });
+  }, {
+    threshold: 0.5 // Adjust this if you want it to trigger sooner/later
+  });
+
+  document.querySelectorAll('.scroll-flip').forEach(card => {
+    observer.observe(card);
+  });
+</script>
+
