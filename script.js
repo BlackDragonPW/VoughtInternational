@@ -1,16 +1,25 @@
-// Scroll reveal effect
+// Scroll reveal
 const reveals = document.querySelectorAll(".reveal");
 
-const revealOnScroll = () => {
-  const triggerBottom = window.innerHeight * 0.85;
+function revealOnScroll() {
+  for (let i = 0; i < reveals.length; i++) {
+    const windowHeight = window.innerHeight;
+    const elementTop = reveals[i].getBoundingClientRect().top;
+    const revealPoint = 100;
 
-  reveals.forEach(reveal => {
-    const boxTop = reveal.getBoundingClientRect().top;
-    if (boxTop < triggerBottom) {
-      reveal.classList.add("visible");
+    if (elementTop < windowHeight - revealPoint) {
+      reveals[i].classList.add("active");
     }
-  });
-};
+  }
+}
 
 window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("load", revealOnScroll);
+
+// Hamburger toggle
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("nav-links");
+
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("show");
+});
