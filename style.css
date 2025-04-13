@@ -202,19 +202,19 @@ footer {
   .main-title {
     font-size: 2.2rem;
   }
-  .flip-card {
+.flip-card {
   background-color: transparent;
   width: 300px;
   height: 400px;
   perspective: 1000px;
-  margin: 30px auto;
+  margin: 40px auto;
 }
 
 .flip-card-inner {
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 0.8s;
+  transition: transform 0.8s ease-in-out;
   transform-style: preserve-3d;
 }
 
@@ -226,8 +226,8 @@ footer {
   position: absolute;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden;
   border-radius: 10px;
+  backface-visibility: hidden;
   overflow: hidden;
 }
 
@@ -235,16 +235,18 @@ footer {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .flip-card-back {
   background-color: #000;
   color: #00bfff;
+  transform: rotateY(180deg);
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: rotateY(180deg);
   font-size: 1.5rem;
-  text-shadow: 0 0 8px #00bfff;
-}
+  text-align: center;
+  text-shadow: 0 0 15px #00bfff;
+  padding: 20px;
 }
