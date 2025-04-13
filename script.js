@@ -32,11 +32,19 @@ document.querySelectorAll(".nav-links a").forEach(link =>
 );
 window.addEventListener('scroll', () => {
   const logoInner = document.querySelector('.logo-inner');
-  const scrollPosition = window.scrollY; // The distance the user has scrolled
-  
-  // Calculate the rotation angle based on the scroll position
-  const rotationDegree = scrollPosition / 2;  // Adjust this divisor to control the flip speed
+  const notsad = document.querySelector('.notsad-drop');
+  const scrollY = window.scrollY;
 
-  // Apply the rotation to the logo
-  logoInner.style.transform = `rotateY(${rotationDegree}deg)`;
+  // Rotate logo based on scroll
+  const rotation = scrollY / 2;
+  logoInner.style.transform = `rotateY(${rotation}deg)`;
+
+  // Trigger Notsad drop
+  if (scrollY > 300) {
+    notsad.style.top = '180px';
+    notsad.style.opacity = '1';
+  } else {
+    notsad.style.top = '-300px';
+    notsad.style.opacity = '0';
+  }
 });
