@@ -1,4 +1,4 @@
-// Scroll reveal
+// Scroll reveal on scroll
 const reveals = document.querySelectorAll(".reveal");
 
 function revealOnScroll() {
@@ -16,10 +16,17 @@ function revealOnScroll() {
 window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("load", revealOnScroll);
 
-// Hamburger toggle
+// Hamburger menu toggle
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("nav-links");
 
 hamburger.addEventListener("click", () => {
   navLinks.classList.toggle("show");
 });
+
+// Close menu when clicking a nav item (optional)
+document.querySelectorAll(".nav-links a").forEach(link =>
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("show");
+  })
+);
