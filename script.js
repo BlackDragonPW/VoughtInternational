@@ -39,12 +39,17 @@ window.addEventListener('scroll', () => {
   const rotation = scrollY / 2;
   logoInner.style.transform = `rotateY(${rotation}deg)`;
 
-  // Trigger Notsad drop
-  if (scrollY > 300) {
-    notsad.style.top = '180px';
-    notsad.style.opacity = '1';
+window.addEventListener('scroll', () => {
+  const notsadWrap = document.querySelector('.notsad-wrap');
+  const scrollY = window.scrollY;
+
+  // You can tweak 500 to where on the page you want this to trigger
+  if (scrollY > 500) {
+    notsadWrap.style.transform = 'translateX(0)';
+    notsadWrap.style.opacity = '1';
   } else {
-    notsad.style.top = '-300px';
-    notsad.style.opacity = '0';
+    notsadWrap.style.transform = 'translateX(-100%)';
+    notsadWrap.style.opacity = '0';
   }
 });
+
