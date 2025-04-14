@@ -786,3 +786,23 @@ footer {
     gap: 15px;
   }
   }
+/* Navigation-specific logo */
+.nav-logo {
+  height: 35px; /* Slightly smaller for nav */
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.nav-logo-img {
+  height: 100%;
+  width: auto;
+  max-width: 120px; /* More compact for nav */
+  object-fit: contain;
+  filter: drop-shadow(0 0 3px var(--primary));
+}
+
+.nav-logo:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
