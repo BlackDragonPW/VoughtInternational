@@ -48,3 +48,17 @@ window.addEventListener('scroll', () => {
     notsad.style.opacity = '0';
   }
 });
+window.addEventListener('scroll', () => {
+  const notsad = document.querySelector('.notsad-wrap');
+  const scrollY = window.scrollY;
+
+  if (notsad) {
+    if (scrollY > 500) {
+      notsad.style.transform = 'translateX(0)';
+      notsad.style.opacity = '1';
+    } else {
+      notsad.style.transform = 'translateX(-100%)';
+      notsad.style.opacity = '0';
+    }
+  }
+});
