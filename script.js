@@ -31,25 +31,23 @@ document.querySelectorAll(".nav-links a").forEach(link =>
   })
 );
 window.addEventListener('scroll', () => {
-  const logoInner = document.querySelector('.logo-inner');
-  const notsad = document.querySelector('.notsad-drop');
-  const scrollY = window.scrollY;
-
-  // Rotate logo based on scroll
-  const rotation = scrollY / 2;
-  logoInner.style.transform = `rotateY(${rotation}deg)`;
-
-window.addEventListener('scroll', () => {
+  const logo = document.querySelector('.logo-inner');
   const notsadWrap = document.querySelector('.notsad-wrap');
   const scrollY = window.scrollY;
 
-  // You can tweak 500 to where on the page you want this to trigger
-  if (scrollY > 500) {
-    notsadWrap.style.transform = 'translateX(0)';
-    notsadWrap.style.opacity = '1';
-  } else {
-    notsadWrap.style.transform = 'translateX(-100%)';
-    notsadWrap.style.opacity = '0';
+  // Vought flip effect
+  if (logo) {
+    logo.style.transform = `rotateY(${scrollY / 2}deg)`;
+  }
+
+  // Notsad slide-in from left
+  if (notsadWrap) {
+    if (scrollY > 500) {
+      notsadWrap.style.transform = 'translateX(0)';
+      notsadWrap.style.opacity = '1';
+    } else {
+      notsadWrap.style.transform = 'translateX(-100%)';
+      notsadWrap.style.opacity = '0';
+    }
   }
 });
-
