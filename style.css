@@ -806,3 +806,8 @@ footer {
   transform: scale(1.05);
   filter: brightness(1.2);
 }
+.no-scroll {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
