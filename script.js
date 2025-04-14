@@ -1,46 +1,14 @@
-// Scroll reveal on scroll
-const reveals = document.querySelectorAll(".reveal");
-
-function revealOnScroll() {
-  for (let i = 0; i < reveals.length; i++) {
-    const windowHeight = window.innerHeight;
-    const elementTop = reveals[i].getBoundingClientRect().top;
-    const revealPoint = 100;
-
-    if (elementTop < windowHeight - revealPoint) {
-      reveals[i].classList.add("active");
-    }
-  }
-}
-
-window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
-
-// Hamburger menu toggle
-const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("nav-links");
-
-hamburger.addEventListener("click", () => {
-  navLinks.classList.toggle("show");
-});
-
-// Close menu when clicking a nav item (optional)
-document.querySelectorAll(".nav-links a").forEach(link =>
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("show");
-  })
-);
 window.addEventListener('scroll', () => {
-  const logo = document.querySelector('.logo-inner');
-  const notsadWrap = document.querySelector('.notsad-wrap');
   const scrollY = window.scrollY;
 
-  // Vought flip effect
+  // Vought card flip
+  const logo = document.querySelector('.logo-inner');
   if (logo) {
     logo.style.transform = `rotateY(${scrollY / 2}deg)`;
   }
 
   // Notsad slide-in from left
+  const notsadWrap = document.querySelector('.notsad-wrap');
   if (notsadWrap) {
     if (scrollY > 500) {
       notsadWrap.style.transform = 'translateX(0)';
@@ -50,4 +18,28 @@ window.addEventListener('scroll', () => {
       notsadWrap.style.opacity = '0';
     }
   }
+
+  // Reveal elements on scroll
+  const revealElements = document.querySelectorAll('.reveal-on-scroll');
+  revealElements.forEach((el) => {
+    const elementTop = el.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (elementTop < windowHeight - 100) {
+      el.classList.add('revealed');
+    } else {
+      el.classList.remove('revealed');
+    }
+  });
 });
+
+// Hamburger menu toggle
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    hamburger.classList.toggle('open');
+  });
+}
