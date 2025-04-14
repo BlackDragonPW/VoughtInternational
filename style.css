@@ -233,30 +233,6 @@ footer {
   color: white;
   font-weight: bold;
 }
-
-.notsad-wrap {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 100px;
-  opacity: 0;
-  transform: translateX(-100%);
-  transition: transform 1s ease, opacity 1s ease;
-}
-
-.notsad-img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-.notsad-quote {
-  font-size: 1.2rem;
-  color: white;
-  font-weight: bold;
-}
   .notsad-wrap {
   transform: translateX(-100%);
   opacity: 0;
