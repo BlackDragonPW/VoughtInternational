@@ -31,13 +31,15 @@ document.querySelectorAll(".nav-links a").forEach(link =>
   })
 );
 window.addEventListener('scroll', () => {
-  const logoInner = document.querySelector('.logo-inner');
-  const notsad = document.querySelector('.notsad-drop');
+  const logo = document.querySelector('.logo-inner');
   const scrollY = window.scrollY;
 
-  // Rotate logo based on scroll
-  const rotation = scrollY / 2;
-  logoInner.style.transform = `rotateY(${rotation}deg)`;
+  if (scrollY > 300) {
+    logo.style.transform = 'rotateY(180deg)';
+  } else {
+    logo.style.transform = 'rotateY(0deg)';
+  }
+});
 
   // Trigger Notsad drop
   if (scrollY > 300) {
