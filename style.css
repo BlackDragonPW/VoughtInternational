@@ -240,8 +240,8 @@ footer {
   }
 .image-text {
   display: inline-block;
-  width: 25px;
-  font-size: 25px; /* scales with screen width */
+  width: 500px;
+  font-size: 500px; /* scales with screen width */
   font-weight: 900;
   text-align: center;
   background-image: url('https://i.postimg.cc/zXHmQcHR/images-3-19.jpg'); /* replace with your path */
