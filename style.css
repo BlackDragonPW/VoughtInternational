@@ -63,7 +63,7 @@ a {
 
 /* Hero Section */
 .hero-section {
-  height: 30vh;
+  height: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
