@@ -242,7 +242,7 @@ footer {
   font-size: 120px;
   font-weight: 900;
   background-image: url('https://i.postimg.cc/zXHmQcHR/images-3-19.jpg'); /* use actual image path */
-  background-size: cover;
+  background-size: 100%;
   background-position: center;
   color: transparent;
 
