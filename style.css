@@ -717,6 +717,7 @@ footer {
     display: flex;
   }
 
+@media (max-width: 768px) {
   .nav-links {
     position: fixed;
     top: 0;
@@ -728,12 +729,14 @@ footer {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start; /* Changed from center */
+    padding-top: 80px; /* Added this line */
     align-items: center;
     transition: right 0.5s ease;
     z-index: 1000;
     border-left: 1px solid rgba(0, 191, 255, 0.1);
   }
+}
 
   .nav-links.active {
     right: 0;
@@ -743,6 +746,8 @@ footer {
     flex-direction: column;
     gap: 30px;
     text-align: center;
+    width: 100%;
+    margin-top: 20px; /* Adds space between top padding and first item */
   }
 
   .nav-links a {
