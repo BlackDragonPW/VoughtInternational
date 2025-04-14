@@ -2,15 +2,15 @@
 const reveals = document.querySelectorAll(".reveal");
 
 function revealOnScroll() {
-  for (let i = 0; i < reveals.length; i++) {
-    const windowHeight = window.innerHeight;
-    const elementTop = reveals[i].getBoundingClientRect().top;
-    const revealPoint = 100;
+  for (let i = 0; i < reveals.length; i++) {
+    const windowHeight = window.innerHeight;
+    const elementTop = reveals[i].getBoundingClientRect().top;
+    const revealPoint = 100;
 
-    if (elementTop < windowHeight - revealPoint) {
-      reveals[i].classList.add("active");
-    }
-  }
+    if (elementTop < windowHeight - revealPoint) {
+      reveals[i].classList.add("active");
+    }
+  }
 }
 
 window.addEventListener("scroll", revealOnScroll);
@@ -21,36 +21,30 @@ const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("nav-links");
 
 hamburger.addEventListener("click", () => {
-  navLinks.classList.toggle("show");
+  navLinks.classList.toggle("show");
 });
 
 // Close menu when clicking a nav item (optional)
 document.querySelectorAll(".nav-links a").forEach(link =>
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("show");
-  })
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("show");
+  })
 );
-
-// Vought logo scroll and Notsad slide-in
 window.addEventListener('scroll', () => {
-  const scrollY = window.scrollY;
+  const logoInner = document.querySelector('.logo-inner');
+  const notsad = document.querySelector('.notsad-drop');
+  const scrollY = window.scrollY;
 
-  // Rotate Vought logo
-  const logoInner = document.querySelector('.logo-inner');
-  if (logoInner) {
-    const rotation = scrollY / 2;
-    logoInner.style.transform = `rotateY(${rotation}deg)`;
-  }
+  // Rotate logo based on scroll
+  const rotation = scrollY / 2;
+  logoInner.style.transform = `rotateY(${rotation}deg)`;
 
-  // Slide in Notsad section
-  const notsad = document.querySelector('.notsad-wrap');
-  if (notsad) {
-    if (scrollY > 500) {
-      notsad.style.transform = 'translateX(0)';
-      notsad.style.opacity = '1';
-    } else {
-      notsad.style.transform = 'translateX(-100%)';
-      notsad.style.opacity = '0';
-    }
-  }
+  // Trigger Notsad drop
+  if (scrollY > 300) {
+    notsad.style.top = '180px';
+    notsad.style.opacity = '1';
+  } else {
+    notsad.style.top = '-300px';
+    notsad.style.opacity = '0';
+  }
 });
