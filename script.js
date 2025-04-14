@@ -1,64 +1,129 @@
-// Scroll reveal on scroll
-const reveals = document.querySelectorAll(".reveal");
+// Navbar Scroll Effect
+const navbar = document.querySelector('.navbar');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+// Hamburger Menu Toggle
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navLinks.classList.toggle('active');
+});
+
+// Close menu when clicking a nav item
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navLinks.classList.remove('active');
+  });
+});
+
+// Scroll Reveal Animation
+const reveals = document.querySelectorAll('.reveal');
 
 function revealOnScroll() {
-  for (let i = 0; i < reveals.length; i++) {
-    const windowHeight = window.innerHeight;
-    const elementTop = reveals[i].getBoundingClientRect().top;
-    const revealPoint = 100;
+  for (let i = 0; i < reveals.length; i++) {
+    const windowHeight = window.innerHeight;
+    const elementTop = reveals[i].getBoundingClientRect().top;
+    const revealPoint = 100;
 
-    if (elementTop < windowHeight - revealPoint) {
-      reveals[i].classList.add("active");
-    }
-  }
-}
-
-window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
-
-// Hamburger menu toggle
-const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("nav-links");
-
-hamburger.addEventListener("click", () => {
-  navLinks.classList.toggle("show");
-});
-
-// Close menu when clicking a nav item (optional)
-document.querySelectorAll(".nav-links a").forEach(link =>
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("show");
-  })
-);
-window.addEventListener('scroll', () => {
-  const logoInner = document.querySelector('.logo-inner');
-  const notsad = document.querySelector('.notsad-drop');
-  const scrollY = window.scrollY;
-
-  // Rotate logo based on scroll
-  const rotation = scrollY / 2;
-  logoInner.style.transform = `rotateY(${rotation}deg)`;
-
-  // Trigger Notsad drop
-  if (scrollY > 300) {
-    notsad.style.top = '180px';
-    notsad.style.opacity = '1';
-  } else {
-    notsad.style.top = '-300px';
-    notsad.style.opacity = '0';
-  }
-});
-window.addEventListener('scroll', () => {
-  const notsad = document.querySelector('.notsad-wrap');
-  const scrollY = window.scrollY;
-
-  if (notsad) {
-    if (scrollY > 500) {
-      notsad.style.transform = 'translateX(0)';
-      notsad.style.opacity = '1';
-    } else {
-      notsad.style.transform = 'translateX(-100%)';
-      notsad.style.opacity = '0';
+    if (elementTop < windowHeight - revealPoint) {
+      reveals[i].classList.add('active');
     }
   }
+}
+
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+
+// Logo Rotation on Scroll
+const logoInner = document.querySelector('.logo-inner');
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+  const rotation = scrollY / 3;
+  logoInner.style.transform = `rotateY(${rotation}deg)`;
+});
+
+// Scroll to Top Button
+const scrollTop = document.getElementById('scrollTop');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    scrollTop.classList.add('active');
+  } else {
+    scrollTop.classList.remove('active');
+  }
+});
+
+scrollTop.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+
+// Smooth Scrolling for Anchor Links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    const targetId = this.getAttribute('href');
+    if (targetId === '#') return;
+    
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      window.scrollTo({
+        top: targetElement.offsetTop - 80,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+
+// Hero Section Animation
+const subtitle = document.querySelector('.subtitle');
+const scrollDown = document.querySelectorAll('.scroll-down span');
+
+setTimeout(() => {
+  subtitle.style.opacity = '1';
+}, 500);
+
+scrollDown.forEach((span, index) => {
+  setTimeout(() => {
+    span.style.opacity = '1';
+  }, 1000 + (index * 200));
+});
+
+// Card Hover Effect Enhancement
+const cards = document.querySelectorAll('.card');
+cards.forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const x = e.clientX - card.getBoundingClientRect().left;
+    const y = e.clientY - card.getBoundingClientRect().top;
+    
+    const centerX = card.offsetWidth / 2;
+    const centerY = card.offsetHeight / 2;
+    
+    const angleX = (y - centerY) / 20;
+    const angleY = (centerX - x) / 20;
+    
+    card.style.transform = `rotateX(${angleX}deg) rotateY(${angleY}deg) translateY(-10px) scale(1.03)`;
+  });
+  
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'translateY(-10px) scale(1.03)';
+  });
+});
+
+// Preloader (optional)
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.body.classList.add('loaded');
+  }, 500);
 });
