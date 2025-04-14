@@ -1,4 +1,4 @@
-/ Scroll reveal on scroll
+// Scroll reveal on scroll
 const reveals = document.querySelectorAll(".reveal");
 
 function revealOnScroll() {
@@ -30,35 +30,27 @@ document.querySelectorAll(".nav-links a").forEach(link =>
     navLinks.classList.remove("show");
   })
 );
+
+// Vought logo scroll and Notsad slide-in
 window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+
+  // Rotate Vought logo
   const logoInner = document.querySelector('.logo-inner');
-  const notsad = document.querySelector('.notsad-drop');
-  const scrollY = window.scrollY;
-
-  // Rotate logo based on scroll
-  const rotation = scrollY / 2;
-  logoInner.style.transform = `rotateY(${rotation}deg)`;
-
-  // Trigger Notsad drop
-  if (scrollY > 300) {
-    notsad.style.top = '180px';
-    notsad.style.opacity = '1';
-  } else {
-    notsad.style.top = '-300px';
-    notsad.style.opacity = '0';
+  if (logoInner) {
+    const rotation = scrollY / 2;
+    logoInner.style.transform = `rotateY(${rotation}deg)`;
   }
-});
-window.addEventListener('scroll', () => {
-  const notsadWrap = document.querySelector('.notsad-wrap');
-  const scrollY = window.scrollY;
 
-  if (notsadWrap) {
+  // Slide in Notsad section
+  const notsad = document.querySelector('.notsad-wrap');
+  if (notsad) {
     if (scrollY > 500) {
-      notsadWrap.style.transform = 'translateX(0)';
-      notsadWrap.style.opacity = '1';
+      notsad.style.transform = 'translateX(0)';
+      notsad.style.opacity = '1';
     } else {
-      notsadWrap.style.transform = 'translateX(-100%)';
-      notsadWrap.style.opacity = '0';
+      notsad.style.transform = 'translateX(-100%)';
+      notsad.style.opacity = '0';
     }
   }
 });
