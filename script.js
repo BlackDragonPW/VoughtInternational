@@ -8,20 +8,22 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Hamburger Menu Toggle
+// Mobile Menu Toggle
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
 
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('active');
   navLinks.classList.toggle('active');
+  document.body.classList.toggle('no-scroll');
 });
 
-// Close menu when clicking a nav item
-document.querySelectorAll('.nav-links a').forEach(link => {
+// Close menu when clicking a nav item or logo
+document.querySelectorAll('.nav-links a, .nav-logo').forEach(link => {
   link.addEventListener('click', () => {
     hamburger.classList.remove('active');
     navLinks.classList.remove('active');
+    document.body.classList.remove('no-scroll');
   });
 });
 
@@ -45,31 +47,37 @@ window.addEventListener('load', revealOnScroll);
 
 // Logo Rotation on Scroll
 const logoInner = document.querySelector('.logo-inner');
-window.addEventListener('scroll', () => {
-  const scrollY = window.scrollY;
-  const rotation = scrollY / 3;
-  logoInner.style.transform = `rotateY(${rotation}deg)`;
-});
+if (logoInner) {
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const rotation = scrollY / 3;
+    logoInner.style.transform = `rotateY(${rotation}deg)`;
+  });
+}
 
 // Scroll to Top Button
 const scrollTop = document.getElementById('scrollTop');
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 300) {
-    scrollTop.classList.add('active');
-  } else {
-    scrollTop.classList.remove('active');
-  }
-});
-
-scrollTop.addEventListener('click', () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
+if (scrollTop) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      scrollTop.classList.add('active');
+    } else {
+      scrollTop.classList.remove('active');
+    }
   });
-});
+
+  scrollTop.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+}
 
 // Smooth Scrolling for Anchor Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  if (anchor.classList.contains('nav-logo')) return; // Skip logo link
+  
   anchor.addEventListener('click', function(e) {
     e.preventDefault();
     
@@ -90,15 +98,19 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const subtitle = document.querySelector('.subtitle');
 const scrollDown = document.querySelectorAll('.scroll-down span');
 
-setTimeout(() => {
-  subtitle.style.opacity = '1';
-}, 500);
-
-scrollDown.forEach((span, index) => {
+if (subtitle) {
   setTimeout(() => {
-    span.style.opacity = '1';
-  }, 1000 + (index * 200));
-});
+    subtitle.style.opacity = '1';
+  }, 500);
+}
+
+if (scrollDown) {
+  scrollDown.forEach((span, index) => {
+    setTimeout(() => {
+      span.style.opacity = '1';
+    }, 1000 + (index * 200));
+  });
+}
 
 // Card Hover Effect Enhancement
 const cards = document.querySelectorAll('.card');
@@ -126,4 +138,18 @@ window.addEventListener('load', () => {
   setTimeout(() => {
     document.body.classList.add('loaded');
   }, 500);
+});
+
+// Prevent scrolling when mobile menu is open
+document.addEventListener('DOMContentLoaded', () => {
+  const body = document.body;
+  const toggleNoScroll = () => {
+    if (navLinks.classList.contains('active')) {
+      body.classList.add('no-scroll');
+    } else {
+      body.classList.remove('no-scroll');
+    }
+  };
+  
+  hamburger.addEventListener('click', toggleNoScroll);
 });
