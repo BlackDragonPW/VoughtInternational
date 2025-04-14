@@ -211,8 +211,8 @@ footer {
 }
 
 .logo-inner {
-  width: 100%;
-  height: 100%;
+  width: 100px;
+  height: 100px;
   position: relative;
   transition: transform 0.8s ease;
   transform-style: preserve-3d;
@@ -220,8 +220,8 @@ footer {
 
 .logo-face {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 100px;
+  height: 100px;
   backface-visibility: hidden;
   display: flex;
   align-items: center;
@@ -234,8 +234,8 @@ footer {
 }
 
 .front img {
-  width: 100%;
-  height: 100%;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
   border-radius: 12px;
 }
