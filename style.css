@@ -238,4 +238,12 @@ footer {
   opacity: 0;
   transition: all 1s ease;
   }
+  .image-text {
+  font-size: 100px;
+  font-weight: bold;
+  background: url('https://i.postimg.cc/zXHmQcHR/images-3-19.jpg') no-repeat center center / cover;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  }
   
