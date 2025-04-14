@@ -239,11 +239,19 @@ footer {
   transition: all 1s ease;
   }
   .image-text {
-  font-size: 100px;
-  font-weight: bold;
-  background: url('https://i.postimg.cc/zXHmQcHR/images-3-19.jpg') no-repeat center center / cover;
+  font-size: 120px;
+  font-weight: 900;
+  background-image: url('your-image.jpg'); /* use actual image path */
+  background-size: cover;
+  background-position: center;
+  color: transparent;
+
+  /* Image in text */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  color: transparent;
-  }
-  
+
+  /* For newer support */
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
