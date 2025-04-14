@@ -234,29 +234,26 @@ footer {
   font-weight: bold;
 }
 
-.notsad-drop {
-  position: absolute;
-  top: -300px;
-  left: 50%;
-  transform: translateX(-50%);
+.notsad-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 100px;
   opacity: 0;
-  transition: top 1s ease, opacity 1s ease;
-  z-index: 10;
-  color: white;
-  font-weight: bold;
-  background: #111;
-  padding: 10px 20px;
-  border-radius: 10px;
+  transform: translateX(-100%);
+  transition: transform 1s ease, opacity 1s ease;
 }
 
-
-.notsad-drop img {
+.notsad-img {
   width: 100px;
+  height: 100px;
+  object-fit: cover;
   border-radius: 50%;
 }
 
-.notsad-drop p {
-  color: #fff;
-  margin-top: 10px;
-  font-style: italic;
+.notsad-quote {
+  font-size: 1.2rem;
+  color: white;
+  font-weight: bold;
 }
