@@ -240,7 +240,7 @@ footer {
   }
 .image-text {
   display: inline-block;
-  width: 10vw;
+  width: 25vw;
   font-size: 10vw; /* scales with screen width */
   font-weight: 900;
   text-align: center;
