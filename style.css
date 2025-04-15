@@ -363,15 +363,14 @@ section {
   background: var(--dark-gray);
   border-radius: 15px;
   padding: 25px;
-  width: 280px;
+  width: 400px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   transition: all 0.5s ease;
   position: relative;
   overflow: hidden;
   opacity: 0;
   transform: translateY(50px);
-  width: 350px; /* Fixed width */
-  height: 350px; /* Fixed height */
+  height: 400px; /* Fixed height */
 }
 
 .card-img {
