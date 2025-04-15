@@ -370,7 +370,7 @@ section {
   overflow: hidden;
   opacity: 0;
   transform: translateY(50px);
-  height: 600px; /* Fixed height */
+  height: 350px; /* Fixed height */
 }
 
 .card-img {
