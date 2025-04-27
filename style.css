@@ -344,8 +344,7 @@ section {
 
 .back-button {
   position: fixed;
-  top: 20px;
-  right: 20px;
+bottom: 0;
   z-index: 1001;
   padding: 12px 25px;
   background: rgba(0, 191, 255, 0.1);
