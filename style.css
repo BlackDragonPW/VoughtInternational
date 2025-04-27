@@ -163,24 +163,7 @@ a:hover {
   margin-bottom: 20px;
 }
 
-.more-info {
-  background: rgba(0, 191, 255, 0.1);
-  color: var(--primary);
-  border-radius: 30px;
-  text-decoration: none;
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 500;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(0, 191, 255, 0.3);
-  box-shadow: 0 0 15px rgba(0, 191, 255, 0.3),
-              0 0 30px rgba(0, 191, 255, 0.2) inset;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  width: fit-content;
-}
+
 
 .image-text {
   font-size: clamp(3rem, 10vw, 6rem);
@@ -188,7 +171,18 @@ a:hover {
   background-image: url('https://i.postimg.cc/zXHmQcHR/images-3-19.jpg');
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat.more-info {
+  background: rgba(0, 191, 255, 0.1);
+  border-radius: 30px;
+  border: 1px solid rgba(0, 191, 255, 0.3);
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.3),
+              0 0 30px rgba(0, 191, 255, 0.2) inset;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  color: var(--primary);
+  /* Add any content-specific styles below */
+  };
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
