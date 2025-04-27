@@ -344,7 +344,8 @@ section {
 
 .back-button {
   position: fixed;
-  botton: 20px;
+  top: 20px;
+  left: 20px;
   z-index: 1001;
   padding: 12px 25px;
   background: rgba(0, 191, 255, 0.1);
@@ -363,6 +364,8 @@ section {
   align-items: center;
   gap: 8px;
 }
+
+change the position to bottom centre instead of top left
 
 back-arrow {
   font-size: 1.2em;
