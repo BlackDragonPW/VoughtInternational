@@ -336,8 +336,9 @@ section {
 
 .back-button {
   position: fixed;
-  top: 20px;
-  left: 20px;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1001;
   padding: 12px 25px;
   background: rgba(0, 191, 255, 0.1);
@@ -347,7 +348,7 @@ section {
   font-family: 'Orbitron', sans-serif;
   font-weight: 500;
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px;
   border: 1px solid rgba(0, 191, 255, 0.3);
   box-shadow: 0 0 15px rgba(0, 191, 255, 0.3),
               0 0 30px rgba(0, 191, 255, 0.2) inset;
@@ -355,6 +356,7 @@ section {
   display: flex;
   align-items: center;
   gap: 8px;
+  width: fit-content; /* Add this to prevent full-width stretching */
 }
 
 .back-button:hover {
