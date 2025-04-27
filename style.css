@@ -343,8 +343,10 @@ section {
 }
 
 .back-button {
-  position: fixed;
-bottom: 0;
+  position: absolute; /* Change from fixed to absolute */
+  bottom: 20px; /* Adjust this value for spacing from bottom */
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1001;
   padding: 12px 25px;
   background: rgba(0, 191, 255, 0.1);
@@ -362,8 +364,14 @@ bottom: 0;
   display: flex;
   align-items: center;
   gap: 8px;
+  width: fit-content;
 }
 
+/* Add this to the parent container */
+.parent-container {
+  position: relative;
+  min-height: 100vh; /* Or whatever height your container needs */
+}
 change the position to bottom centre instead of top left
 
 back-arrow {
