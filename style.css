@@ -877,3 +877,29 @@ footer {
   position: fixed;
   width: 100%;
   }
+
+.more-info-button {
+  display: inline-block;
+  padding: 12px 25px;
+  background: rgba(0, 191, 255, 0.1);
+  color: var(--primary);
+  border-radius: 30px;
+  text-decoration: none;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 191, 255, 0.3);
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.3),
+              0 0 30px rgba(0, 191, 255, 0.2) inset;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.more-info-button:hover {
+  background: rgba(0, 191, 255, 0.2);
+  box-shadow: 0 0 25px rgba(0, 191, 255, 0.5),
+              0 0 40px rgba(0, 191, 255, 0.3) inset;
+  transform: translateY(-2px);
+}
